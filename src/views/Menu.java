@@ -38,8 +38,13 @@ public class Menu extends javax.swing.JPanel {
         nombre = new rojeru_san.RSMTextFull();
         calificacion = new rojeru_san.RSMTextFull();
         apellido_materno = new rojeru_san.RSMTextFull();
-        matricula = new rojeru_san.RSMTextFull();
+        facultad = new rojeru_san.RSMTextFull();
         boton_registro = new rojeru_san.RSButtonRiple();
+        matricula = new rojeru_san.RSMTextFull();
+        grupo = new rojeru_san.RSMTextFull();
+        clase = new rojeru_san.RSMTextFull();
+        hora = new rojeru_san.RSMTextFull();
+        salon = new rojeru_san.RSMTextFull();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         id_matricula = new rojeru_san.RSMTextFull();
@@ -93,6 +98,7 @@ public class Menu extends javax.swing.JPanel {
         calificacion.setCaretColor(new java.awt.Color(255, 255, 255));
         calificacion.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         calificacion.setModoMaterial(true);
+        calificacion.setNextFocusableComponent(grupo);
         calificacion.setPlaceholder("Calificación");
         calificacion.setSoloNumeros(true);
         calificacion.setxDarkIcon(true);
@@ -115,6 +121,33 @@ public class Menu extends javax.swing.JPanel {
         apellido_materno.setxDarkIcon(true);
         jPanel1.add(apellido_materno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, 40));
 
+        facultad.setBackground(jPanel1.getBackground());
+        facultad.setForeground(new java.awt.Color(255, 255, 255));
+        facultad.setBordeColorFocus(new java.awt.Color(255, 255, 255));
+        facultad.setBotonColor(new java.awt.Color(204, 0, 51));
+        facultad.setCaretColor(new java.awt.Color(255, 255, 255));
+        facultad.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        facultad.setModoMaterial(true);
+        facultad.setName(""); // NOI18N
+        facultad.setNextFocusableComponent(nombre);
+        facultad.setPlaceholder("Facultad");
+        facultad.setxDarkIcon(true);
+        jPanel1.add(facultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, 40));
+
+        boton_registro.setBackground(new java.awt.Color(38, 50, 56));
+        boton_registro.setBorder(null);
+        boton_registro.setText("Registrar!");
+        boton_registro.setColorHover(new java.awt.Color(38, 50, 56));
+        boton_registro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        boton_registro.setFocusPainted(false);
+        boton_registro.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        boton_registro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_registroAction(evt);
+            }
+        });
+        jPanel1.add(boton_registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, -1, -1));
+
         matricula.setBackground(jPanel1.getBackground());
         matricula.setForeground(new java.awt.Color(255, 255, 255));
         matricula.setBordeColorFocus(new java.awt.Color(255, 255, 255));
@@ -134,19 +167,59 @@ public class Menu extends javax.swing.JPanel {
         });
         jPanel1.add(matricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, 40));
 
-        boton_registro.setBackground(new java.awt.Color(38, 50, 56));
-        boton_registro.setBorder(null);
-        boton_registro.setText("Registrar!");
-        boton_registro.setColorHover(new java.awt.Color(38, 50, 56));
-        boton_registro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        boton_registro.setFocusPainted(false);
-        boton_registro.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        boton_registro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boton_registroAction(evt);
-            }
-        });
-        jPanel1.add(boton_registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, -1, -1));
+        grupo.setBackground(jPanel1.getBackground());
+        grupo.setForeground(new java.awt.Color(255, 255, 255));
+        grupo.setBordeColorFocus(new java.awt.Color(255, 255, 255));
+        grupo.setBotonColor(new java.awt.Color(204, 0, 51));
+        grupo.setCaretColor(new java.awt.Color(255, 255, 255));
+        grupo.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        grupo.setModoMaterial(true);
+        grupo.setName(""); // NOI18N
+        grupo.setNextFocusableComponent(salon);
+        grupo.setPlaceholder("Grupo");
+        grupo.setxDarkIcon(true);
+        jPanel1.add(grupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, 40));
+
+        clase.setBackground(jPanel1.getBackground());
+        clase.setForeground(new java.awt.Color(255, 255, 255));
+        clase.setToolTipText("");
+        clase.setBordeColorFocus(new java.awt.Color(255, 255, 255));
+        clase.setBotonColor(new java.awt.Color(204, 0, 51));
+        clase.setCaretColor(new java.awt.Color(255, 255, 255));
+        clase.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        clase.setModoMaterial(true);
+        clase.setName(""); // NOI18N
+        clase.setNextFocusableComponent(hora);
+        clase.setPlaceholder("Clase");
+        clase.setxDarkIcon(true);
+        jPanel1.add(clase, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, -1, 40));
+
+        hora.setBackground(jPanel1.getBackground());
+        hora.setForeground(new java.awt.Color(255, 255, 255));
+        hora.setBordeColorFocus(new java.awt.Color(255, 255, 255));
+        hora.setBotonColor(new java.awt.Color(204, 0, 51));
+        hora.setCaretColor(new java.awt.Color(255, 255, 255));
+        hora.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        hora.setModoMaterial(true);
+        hora.setName(""); // NOI18N
+        hora.setNextFocusableComponent(facultad);
+        hora.setPlaceholder("Hora Clase");
+        hora.setxDarkIcon(true);
+        jPanel1.add(hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, -1, 40));
+
+        salon.setBackground(jPanel1.getBackground());
+        salon.setForeground(new java.awt.Color(255, 255, 255));
+        salon.setToolTipText("");
+        salon.setBordeColorFocus(new java.awt.Color(255, 255, 255));
+        salon.setBotonColor(new java.awt.Color(204, 0, 51));
+        salon.setCaretColor(new java.awt.Color(255, 255, 255));
+        salon.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        salon.setModoMaterial(true);
+        salon.setName(""); // NOI18N
+        salon.setNextFocusableComponent(clase);
+        salon.setPlaceholder("Salon");
+        salon.setxDarkIcon(true);
+        jPanel1.add(salon, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, 40));
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -194,18 +267,19 @@ public class Menu extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
                             .addComponent(jLabel1)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(id_matricula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(boton_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 36, Short.MAX_VALUE))
+                            .addComponent(id_matricula, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(22, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(boton_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(107, 107, 107))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,9 +288,9 @@ public class Menu extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addComponent(id_matricula, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(18, 18, 18)
                 .addComponent(boton_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE)
@@ -226,102 +300,129 @@ public class Menu extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botton_buscarAction(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botton_buscarAction
-        if(id_matricula.getText().equals("")){
-             showMessageDialog(null, "Debes ingresar una matricula.");
-        }else{
-            if(id_matricula.getText().toString().length() < 7){
+        if (id_matricula.getText().equals("")) {
+            showMessageDialog(null, "Debes ingresar una matricula.");
+        } else {
+            if (id_matricula.getText().toString().length() < 7) {
                 showMessageDialog(null, "Tu matricula debe ser correcta y debe contener al menos 7 carácteres.");
-            }else{
-                   //get data
-                    String textMatricula = id_matricula.getText();
-                    
-                    ConnectionService connection = new ConnectionService();
-                    connection.findValues(textMatricula);
+            } else {
+                //get data
+                String textMatricula = id_matricula.getText();
+
+                ConnectionService connection = new ConnectionService();
+                connection.buscarAlumno(textMatricula);
             }
-           id_matricula.setText("");
+            id_matricula.setText("");
         }
     }//GEN-LAST:event_botton_buscarAction
 
     private void boton_registroAction(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_registroAction
-        
+
         //Get data from fields
         String textMatricula = matricula.getText();
         String textNombre = nombre.getText();
         String textApellidoPaterno = apellido_paterno.getText();
         String textApellidoMaterno = apellido_materno.getText();
-        String textCalificacion = calificacion.getText();   
-       
-        if(areAllNotEmpty(textMatricula, textNombre, textApellidoPaterno, textApellidoMaterno,textCalificacion))
-        {
-            //Connection for packae
+        String textCalificacion = calificacion.getText();
+        String textGrupo = grupo.getText();
+        String textSalon = salon.getText();
+        String textClase = clase.getText();
+        String textHora = hora.getText();
+        String textFacultad = facultad.getText();
+
+        if (areAllNotEmpty(textMatricula, textNombre, textApellidoPaterno, textApellidoMaterno, textCalificacion, textGrupo, textSalon, textClase, textHora)) {
+            //Connection for package
             ConnectionService connection = new ConnectionService();
-            connection.setValues(textMatricula, textNombre, textApellidoPaterno, textApellidoMaterno, textCalificacion);
+            connection.guardarAlumno(
+                    textMatricula,
+                    textNombre,
+                    textApellidoPaterno,
+                    textApellidoMaterno,
+                    textCalificacion,
+                    textGrupo,
+                    textSalon,
+                    textClase,
+                    textHora,
+                    textFacultad);
 
             matricula.setText(null);
             nombre.setText(null);
             apellido_paterno.setText(null);
             apellido_materno.setText(null);
             calificacion.setText(null);
-        }else{
+            grupo.setText(null);
+            salon.setText(null);
+            clase.setText(null);
+            hora.setText(null);
+            facultad.setText(null);
+
+        } else {
             showMessageDialog(null, "Debes ingresar todos los datos.");
         }
-              
+
     }//GEN-LAST:event_boton_registroAction
 
     private void calificacionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_calificacionKeyPressed
-         if(calificacion.getText().length() == 3)
-        {
+        if (calificacion.getText().length() == 3) {
             calificacion.setText(calificacion.getText().substring(0, 2));
         }
     }//GEN-LAST:event_calificacionKeyPressed
 
-    private void matriculaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_matriculaKeyTyped
-        // TODO add your handling code here:
-         if (matricula.getText().length() == 7 ) // limit textfield to 3 characters
-            evt.consume(); 
-    }//GEN-LAST:event_matriculaKeyTyped
-
     private void id_matriculaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_id_matriculaKeyTyped
         // TODO add your handling code here:
-        if (id_matricula.getText().length() == 7 ) // limit textfield to 3 characters
-            evt.consume(); 
+        if (id_matricula.getText().length() == 7) // limit textfield to 3 characters
+            evt.consume();
     }//GEN-LAST:event_id_matriculaKeyTyped
 
     private void id_matriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_matriculaActionPerformed
-           if(id_matricula.getText().equals("")){
-             showMessageDialog(null, "Debes ingresar una matricula.");
-        }else{
-            if(id_matricula.getText().toString().length() < 7){
+        if (id_matricula.getText().equals("")) {
+            showMessageDialog(null, "Debes ingresar una matricula.");
+        } else {
+            if (id_matricula.getText().toString().length() < 7) {
                 showMessageDialog(null, "Tu matricula debe ser correcta y debe contener al menos 7 carácteres.");
-            }else{
-                   //get data
-                    String textMatricula = id_matricula.getText();
-                    
-                    ConnectionService connection = new ConnectionService();
-                    connection.findValues(textMatricula);
+            } else {
+                //get data
+                String textMatricula = id_matricula.getText();
+
+                ConnectionService connection = new ConnectionService();
+                connection.buscarAlumno(textMatricula);
             }
-           id_matricula.setText("");
+            id_matricula.setText("");
         }
     }//GEN-LAST:event_id_matriculaActionPerformed
 
-    public static boolean areAllNotEmpty(String... texts)
-    {
-        for(String s : texts) if(s == null || "".equals(s)) return false;
+    private void matriculaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_matriculaKeyTyped
+        // TODO add your handling code here:
+        if (matricula.getText().length() == 7) // limit textfield to 3 characters
+            evt.consume();
+    }//GEN-LAST:event_matriculaKeyTyped
+
+    public static boolean areAllNotEmpty(String... texts) {
+        for (String s : texts) {
+            if (s == null || "".equals(s)) {
+                return false;
+            }
+        }
         return true;
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojeru_san.RSMTextFull apellido_materno;
     private rojeru_san.RSMTextFull apellido_paterno;
     private rojeru_san.RSButtonRiple boton_buscar;
     private rojeru_san.RSButtonRiple boton_registro;
     private rojeru_san.RSMTextFull calificacion;
+    private rojeru_san.RSMTextFull clase;
+    private rojeru_san.RSMTextFull facultad;
+    private rojeru_san.RSMTextFull grupo;
+    private rojeru_san.RSMTextFull hora;
     private rojeru_san.RSMTextFull id_matricula;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private rojeru_san.RSMTextFull matricula;
     private rojeru_san.RSMTextFull nombre;
+    private rojeru_san.RSMTextFull salon;
     private javax.swing.JLabel subtitulo_registro;
     private javax.swing.JLabel titulo_registro;
     // End of variables declaration//GEN-END:variables

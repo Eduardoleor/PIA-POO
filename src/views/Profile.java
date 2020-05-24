@@ -23,28 +23,27 @@ public class Profile extends javax.swing.JPanel {
     /**
      * Creates new form Profile
      */
-    
-    public static String setName,setMatricula,setCarrera,setFecha,setAp,setAm,setId;
-    
-    public Profile(String getId, String getMatricula, String getNombre, String getApellido_pa, String getApellido_ma, String getCalificacion, String getCarrera, String getFecha) {
+    public static String setName, setMatricula, setAp, setAm, setId, setSalon, setFacultad;
+
+    public Profile(String getId, String getMatricula, String getNombre, String getApellido_pa, String getApellido_ma, String getCalificacion, String getSalon, String getFacultad) {
         initComponents();
-        
+
         id.setText(getId);
         matricula.setText(getMatricula);
         nombre.setText(getNombre);
         apellido_paterno.setText(getApellido_pa);
         apellido_materno.setText(getApellido_ma);
         calificacion.setText(getCalificacion);
-        carrera.setText(getCarrera);
-        fecha.setText(getFecha);
-        
+        salon.setText(getSalon);
+        facultad.setText(getFacultad);
+
         setName = getNombre;
         setAp = getApellido_pa;
         setAm = getApellido_ma;
         setMatricula = getMatricula;
-        setCarrera = getCarrera;
-        setFecha = getFecha;
-        
+        setSalon = getSalon;
+        setFacultad = getFacultad;
+
         setId = getId;
     }
 
@@ -66,12 +65,20 @@ public class Profile extends javax.swing.JPanel {
         nombre = new rojeru_san.RSMTextFull();
         apellido_materno = new rojeru_san.RSMTextFull();
         calificacion = new rojeru_san.RSMTextFull();
-        carrera = new rojeru_san.RSMTextFull();
+        salon = new rojeru_san.RSMTextFull();
         boton_descargar = new rojeru_san.RSButtonRiple();
         id = new rojeru_san.RSMTextFull();
-        fecha = new rojeru_san.RSMTextFull();
         boton_eliminar = new rojeru_san.RSButtonRiple();
         boton_actualizar = new rojeru_san.RSButtonRiple();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        facultad = new rojeru_san.RSMTextFull();
 
         jPanel1.setBackground(new java.awt.Color(16, 32, 39));
 
@@ -164,24 +171,23 @@ public class Profile extends javax.swing.JPanel {
         calificacion.setColorTransparente(true);
         calificacion.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         calificacion.setModoMaterial(true);
-        calificacion.setNextFocusableComponent(carrera);
+        calificacion.setNextFocusableComponent(salon);
         calificacion.setPlaceholder("Calificación");
         calificacion.setSoloNumeros(true);
         calificacion.setxDarkIcon(true);
 
-        carrera.setForeground(new java.awt.Color(255, 255, 255));
-        carrera.setAutoscrolls(false);
-        carrera.setBordeColorFocus(new java.awt.Color(255, 255, 255));
-        carrera.setBotonColor(new java.awt.Color(255, 255, 255));
-        carrera.setCaretColor(new java.awt.Color(255, 255, 255));
-        carrera.setColorTransparente(true);
-        carrera.setFocusCycleRoot(true);
-        carrera.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        carrera.setModoMaterial(true);
-        carrera.setNextFocusableComponent(fecha);
-        carrera.setPlaceholder("Carrera");
-        carrera.setSoloLetras(true);
-        carrera.setxDarkIcon(true);
+        salon.setForeground(new java.awt.Color(255, 255, 255));
+        salon.setAutoscrolls(false);
+        salon.setBordeColorFocus(new java.awt.Color(255, 255, 255));
+        salon.setBotonColor(new java.awt.Color(255, 255, 255));
+        salon.setCaretColor(new java.awt.Color(255, 255, 255));
+        salon.setColorTransparente(true);
+        salon.setFocusCycleRoot(true);
+        salon.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        salon.setModoMaterial(true);
+        salon.setNextFocusableComponent(facultad);
+        salon.setPlaceholder("Salon");
+        salon.setxDarkIcon(true);
 
         boton_descargar.setBackground(new java.awt.Color(0, 128, 128));
         boton_descargar.setBorder(null);
@@ -209,19 +215,6 @@ public class Profile extends javax.swing.JPanel {
         id.setPlaceholder("ID");
         id.setSoloNumeros(true);
         id.setxDarkIcon(true);
-
-        fecha.setForeground(new java.awt.Color(255, 255, 255));
-        fecha.setBordeColorFocus(new java.awt.Color(255, 255, 255));
-        fecha.setBotonColor(new java.awt.Color(255, 255, 255));
-        fecha.setCaretColor(new java.awt.Color(255, 255, 255));
-        fecha.setColorTransparente(true);
-        fecha.setEnabled(false);
-        fecha.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        fecha.setModoMaterial(true);
-        fecha.setNextFocusableComponent(fecha);
-        fecha.setPlaceholder("Fecha");
-        fecha.setRequestFocusEnabled(false);
-        fecha.setxDarkIcon(true);
 
         boton_eliminar.setBackground(new java.awt.Color(128, 0, 0));
         boton_eliminar.setBorder(null);
@@ -251,6 +244,50 @@ public class Profile extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("ID");
+
+        jLabel2.setFont(new java.awt.Font("Tw Cen MT", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Matricula");
+
+        jLabel3.setFont(new java.awt.Font("Tw Cen MT", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Nombre");
+
+        jLabel4.setFont(new java.awt.Font("Tw Cen MT", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Apellido Paterno");
+
+        jLabel5.setFont(new java.awt.Font("Tw Cen MT", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Apellido Materno");
+
+        jLabel6.setFont(new java.awt.Font("Tw Cen MT", 0, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Calificación");
+
+        jLabel7.setFont(new java.awt.Font("Tw Cen MT", 0, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Salón");
+
+        jLabel8.setFont(new java.awt.Font("Tw Cen MT", 0, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Facultad");
+
+        facultad.setForeground(new java.awt.Color(255, 255, 255));
+        facultad.setAutoscrolls(false);
+        facultad.setBordeColorFocus(new java.awt.Color(255, 255, 255));
+        facultad.setBotonColor(new java.awt.Color(255, 255, 255));
+        facultad.setCaretColor(new java.awt.Color(255, 255, 255));
+        facultad.setColorTransparente(true);
+        facultad.setFocusCycleRoot(true);
+        facultad.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        facultad.setModoMaterial(true);
+        facultad.setPlaceholder("Facultad");
+        facultad.setxDarkIcon(true);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -258,55 +295,87 @@ public class Profile extends javax.swing.JPanel {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addComponent(boton_descargar, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
                         .addComponent(boton_actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(boton_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(matricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(calificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(apellido_materno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(apellido_paterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(carrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(salon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(apellido_paterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel1))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel5)
+                                            .addComponent(apellido_materno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(92, 92, 92)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel6)
+                                            .addComponent(jLabel7)
+                                            .addComponent(jLabel8)
+                                            .addComponent(facultad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE)))))))
                 .addGap(37, 37, 37))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addGap(43, 43, 43)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(apellido_materno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(matricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(calificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                .addGap(28, 28, 28)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(carrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                    .addComponent(salon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel8))
+                .addGap(4, 4, 4)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(apellido_paterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                    .addComponent(facultad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(boton_descargar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(boton_actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -337,18 +406,19 @@ public class Profile extends javax.swing.JPanel {
         String textApellidoPaterno = apellido_paterno.getText();
         String textApellidoMaterno = apellido_materno.getText();
         String textCalificacion = calificacion.getText();
-        String textCarrera = carrera.getText();
+        String textSalon = salon.getText();
+        String textFacultad = facultad.getText();
         String textId = id.getText();
-        
-       if(areAllNotEmpty(textMatricula, textNombre, textApellidoPaterno, textApellidoMaterno,textCalificacion,textCarrera)){
-           
-           ConnectionService connection = new ConnectionService();
-           connection.updateProfile(textMatricula, textNombre, textApellidoPaterno, textApellidoMaterno, textCalificacion, textCarrera, textId);
-       
-       }else{
+
+        if (areAllNotEmpty(textMatricula, textNombre, textApellidoPaterno, textApellidoMaterno, textCalificacion)) {
+
+            ConnectionService connection = new ConnectionService();
+            connection.actualizarPerfilAlumno(textMatricula, textNombre, textApellidoPaterno, textApellidoMaterno, textCalificacion, textSalon, textFacultad, textId);
+
+        } else {
             showMessageDialog(null, "Debes ingresar todos los datos.");
         }
-                   
+
     }//GEN-LAST:event_boton_actualizarActionPerformed
 
     private void boton_descargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_descargarActionPerformed
@@ -358,27 +428,30 @@ public class Profile extends javax.swing.JPanel {
 
     private void boton_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_eliminarActionPerformed
         // TODO add your handling code here:
-        
+
         int input = JOptionPane.showConfirmDialog(null, "¿Estás seguro de eliminar el alumno?", "Selecciona una opción",
-				JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
-        if(input == 0){
+                JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
+        if (input == 0) {
             ConnectionService connection = new ConnectionService();
-            connection.deleteProfile(setId);
+            connection.eliminarAlumno(setId);
         }
-        
+
     }//GEN-LAST:event_boton_eliminarActionPerformed
 
-     public static boolean areAllNotEmpty(String... texts)
-    {
-        for(String s : texts) if(s == null || "".equals(s)) return false;
+    public static boolean areAllNotEmpty(String... texts) {
+        for (String s : texts) {
+            if (s == null || "".equals(s)) {
+                return false;
+            }
+        }
         return true;
     }
-     
-     public static void createDocument(){
-          try {
+
+    public static void createDocument() {
+        try {
             File myObj = new File("estudiante.txt");
             if (myObj.createNewFile()) {
-                
+
                 FileWriter writer = new FileWriter("estudiante.txt", true);
                 writer.write("Universidad Autónoma de Nuevo León | Facultad de Ingeniería Mecánica y Eléctrica");
                 writer.write("\r\n");
@@ -388,21 +461,21 @@ public class Profile extends javax.swing.JPanel {
                 writer.write("\r\n");
                 writer.write("Matricula: " + setMatricula);
                 writer.write("\r\n");
-                writer.write("Carrera: " + setCarrera);
+                writer.write("Salon: " + setSalon);
                 writer.write("\r\n");
-                writer.write(setFecha);
+                writer.write(setFacultad);
                 writer.close();
-                
+
                 Desktop desktop = Desktop.getDesktop();
                 desktop.open(myObj);
             } else {
                 Desktop desktop = Desktop.getDesktop();
                 desktop.open(myObj);
-            }   
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
-     }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojeru_san.RSMTextFull apellido_materno;
@@ -411,13 +484,21 @@ public class Profile extends javax.swing.JPanel {
     private rojeru_san.RSButtonRiple boton_descargar;
     private rojeru_san.RSButtonRiple boton_eliminar;
     private rojeru_san.RSMTextFull calificacion;
-    private rojeru_san.RSMTextFull carrera;
-    private rojeru_san.RSMTextFull fecha;
+    private rojeru_san.RSMTextFull facultad;
     private rojeru_san.RSMTextFull id;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private rojeru_san.RSMTextFull matricula;
     private rojeru_san.RSMTextFull nombre;
+    private rojeru_san.RSMTextFull salon;
     private javax.swing.JLabel subtitulo;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
